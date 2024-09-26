@@ -38,7 +38,7 @@ changelog:
 archives:
   - name_template: >-
       {{ .ProjectName }}_
-      {{ .Os }}_
+      {{ title .Os }}_
       {{ if eq .Arch "darwin" }}Darwin
       {{ else if eq .Arch "linux" }}Linux
       {{ else if eq .Arch "windows" }}Windows
