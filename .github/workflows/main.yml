@@ -1,15 +1,14 @@
-
 # .github/workflows/main.yaml
 name: main
 
 on:
   push:
     branches:
-    - master
-    - release/*
+      - master
+      - release/*
   pull_request:
     branches:
-    - master
+      - master
 
 jobs:
   test:
@@ -21,13 +20,11 @@ jobs:
       - name: Setup go
         uses: actions/setup-go@v2
         with:
-          go-version: '1.19.x'
+          go-version: "1.19.x"
 
-      - name: Install staticcheck
-        run: go install honnef.co/go/tools/cmd/staticcheck@latest
-
-      - name: Run staticcheck
-        run: staticcheck ./...
+      - uses: dominikh/staticcheck-action@v1.2.0
+        with:
+        version: "2022.1.1"
 
       - name: Install golint
         run: go install golang.org/x/lint/golint@latest
