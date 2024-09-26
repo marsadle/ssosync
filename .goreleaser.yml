@@ -36,15 +36,7 @@ changelog:
       - Merge pull request
       - Merge branch
 archives:
-  - name_template: >-
-      {{ .ProjectName }}_
-      {{ title .Os }}_
-      {{ if eq .Arch "darwin" }}Darwin
-      {{ else if eq .Arch "linux" }}Linux
-      {{ else if eq .Arch "windows" }}Windows
-      {{ else if eq .Arch "386" }}i386
-      {{ else }}{{.Arch}}{{ end }}
-      {{ if .Arm }}v{{ .Arm }}{{ end }}
+  - name_template: "{{ .ProjectName }}_{{ title .Os }}_{{ if eq .Arch "darwin" }}Darwin{{ else if eq .Arch "linux" }}Linux{{ else if eq .Arch "windows" }}Windows{{ else if eq .Arch "386" }}i386{{ else }}{{.Arch}}{{ end }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
     format_overrides:
       - goos: windows
         format: zip
