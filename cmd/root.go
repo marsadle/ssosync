@@ -167,6 +167,7 @@ func initConfig() {
 		"log_format",
 		"ignore_users",
 		"ignore_groups",
+		"is_lambda",
 		"include_groups",
 		"user_match",
 		"group_match",
